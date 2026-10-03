@@ -13,3 +13,4 @@ dj-database-url
 python-dotenv
 whitenoise
 django-filter
+setuptools
