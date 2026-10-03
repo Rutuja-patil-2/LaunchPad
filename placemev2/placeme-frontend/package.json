@@ -1,0 +1,32 @@
+{
+  "name": "placeme-frontend",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Launchpad - Smart Training & Placement Portal Frontend",
+  "private": true,
+  "dependencies": {
+    "@heroicons/react": "^2.0.18",
+    "axios": "^1.5.0",
+    "date-fns": "^2.30.0",
+    "framer-motion": "^12.40.0",
+    "lucide-react": "^1.16.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.15.0",
+    "react-toastify": "^9.1.3",
+    "tailwindcss": "^3.3.0",
+    "zustand": "^4.4.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.0.0",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.31",
+    "vite": "^4.4.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "vite"
+  }
+}

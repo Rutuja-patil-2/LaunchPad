@@ -1,0 +1,33 @@
+# Root repository ignores
+
+# Python virtual environments
+venv/
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Django local database
+db.sqlite3
+*.sqlite3
+
+# Node dependencies and build caches
+node_modules/
+**/node_modules/
+dist/
+.vite/
+
+# Media files
+media/
+
+# Environment files
+.env
+.env.*
+
+# IDE / OS files
+.vscode/
+*.log
+*.swp
+.DS_Store
+Thumbs.db
