@@ -6,7 +6,7 @@ import * as Icons from 'lucide-react'
 import { StatCard } from '../../components/StatCard'
 import { DashboardCard } from '../../components/DashboardCard'
 import { Button } from '../../components/Button'
-import { tpoApi } from '../../services/tpoApi'
+import { tpoApi } from '../../services/tpoapi'
 
 const TPODashboard = () => {
   const navigate = useNavigate()
@@ -302,3 +302,5 @@ setStats({
 }
 
 export default TPODashboard
+
+
