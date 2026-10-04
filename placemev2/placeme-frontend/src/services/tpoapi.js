@@ -1,6 +1,6 @@
 import apiClient from './apiClient'
 import api from './api'
-export const tpoApi = {
+export const tpoapi = {
 
   getDashboardStats: () =>
     apiClient.get('/placement/tpo/dashboard/stats/'),

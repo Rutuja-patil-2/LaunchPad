@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { tpoApi } from '../../services/tpoApi'
+import { tpoapi } from '../../services/tpoapi'
 
 const ApplicationDetails = () => {
 
@@ -14,7 +14,7 @@ const ApplicationDetails = () => {
 
   const loadApplication = async () => {
     try {
-      const res = await tpoApi.getApplication(id)
+      const res = await tpoapi.getApplication(id)
 
       setApplication(res.data)
     } catch (err) {
@@ -25,7 +25,7 @@ const ApplicationDetails = () => {
   const updateStatus = async (status) => {
     try {
 
-      await tpoApi.updateApplicationStatus(
+      await tpoapi.updateApplicationStatus(
         id,
         status
       )

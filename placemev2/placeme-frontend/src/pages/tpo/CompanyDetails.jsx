@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { tpoApi } from '../../services/tpoApi'
+import { tpoapi } from '../../services/tpoapi'
 
 const CompanyDetails = () => {
   const { id } = useParams()
@@ -14,7 +14,7 @@ const CompanyDetails = () => {
 
   const fetchCompany = async () => {
     try {
-      const res = await tpoApi.getCompany(id)
+      const res = await tpoapi.getCompany(id)
       setCompany(res.data)
     } catch (err) {
       console.log(err)

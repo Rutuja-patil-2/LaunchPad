@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { tpoApi } from '../../services/tpoApi'
+import { tpoapi } from '../../services/tpoapi'
 
 const CompanyForm = () => {
   const navigate = useNavigate()
@@ -31,7 +31,7 @@ const CompanyForm = () => {
     try {
       setLoading(true)
 
-      await tpoApi.createCompany(formData)
+      await tpoapi.createCompany(formData)
 
       navigate('/tpo/companies')
     } catch (err) {

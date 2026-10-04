@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { tpoApi } from '../../services/tpoApi'
+import { tpoapi } from '../../services/tpoapi'
 
 const EditCourse = () => {
   const { id } = useParams()
@@ -28,7 +28,7 @@ const EditCourse = () => {
 
   const loadCourse = async () => {
     try {
-      const res = await tpoApi.getCourse(id)
+      const res = await tpoapi.getCourse(id)
       setFormData(res.data)
     } catch (err) {
       console.log('Failed to load course', err)
@@ -51,7 +51,7 @@ const EditCourse = () => {
     e.preventDefault()
 
     try {
-      await tpoApi.updateCourse(id, formData)
+      await tpoapi.updateCourse(id, formData)
       navigate('/tpo/courses')
     } catch (err) {
       console.log(err)

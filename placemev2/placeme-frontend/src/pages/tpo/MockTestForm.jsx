@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { tpoApi } from '../../services/tpoApi'
+import { tpoapi } from '../../services/tpoapi'
 import * as Icons from 'lucide-react'
 
 const MockTestForm = () => {
@@ -32,7 +32,7 @@ const MockTestForm = () => {
 
   const fetchCourses = async () => {
     try {
-      const res = await tpoApi.getCourses()
+      const res = await tpoapi.getCourses()
       setCourses(res.data.results || res.data || [])
     } catch (err) {
       console.log(err)
@@ -41,7 +41,7 @@ const MockTestForm = () => {
 
   const fetchTest = async () => {
     try {
-      const res = await tpoApi.getMockTest(id)
+      const res = await tpoapi.getMockTest(id)
       setFormData(res.data)
     } catch (err) {
       console.log(err)
@@ -65,9 +65,9 @@ const MockTestForm = () => {
 
     try {
       if (isEditMode) {
-        await tpoApi.updateMockTest(id, formData)
+        await tpoapi.updateMockTest(id, formData)
       } else {
-        await tpoApi.createMockTest(formData)
+        await tpoapi.createMockTest(formData)
       }
 
       navigate('/tpo/mock-tests')

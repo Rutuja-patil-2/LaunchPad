@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { tpoApi } from '../../services/tpoApi'
+import { tpoapi } from '../../services/tpoapi'
 
 const EditDrive = () => {
   const { id } = useParams()
@@ -23,7 +23,7 @@ const EditDrive = () => {
 
   const loadDrive = async () => {
     try {
-      const res = await tpoApi.getDrive(id)
+      const res = await tpoapi.getDrive(id)
 
       setDriveDetails(res.data)
       setFormData({
@@ -53,7 +53,7 @@ const EditDrive = () => {
     e.preventDefault()
 
     try {
-      await tpoApi.updateDrive(id, {
+      await tpoapi.updateDrive(id, {
         drive_type: formData.drive_type,
         required_skills: formData.required_skills,
         job_description: formData.job_description,

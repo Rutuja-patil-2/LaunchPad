@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { tpoApi } from '../../services/tpoApi'
+import { tpoapi } from '../../services/tpoapi'
 
 const CourseForm = () => {
   const navigate = useNavigate()
@@ -33,7 +33,7 @@ const CourseForm = () => {
 
 const fetchCourse = async () => {
   try {
-    const res = await tpoApi.getCourse(id)
+    const res = await tpoapi.getCourse(id)
 
     setFormData({
       title: res.data.title || '',
@@ -76,9 +76,9 @@ const fetchCourse = async () => {
 
     try {
       if (isEditMode) {
-        await tpoApi.updateCourse(id, formData)
+        await tpoapi.updateCourse(id, formData)
       } else {
-        await tpoApi.createCourse(formData)
+        await tpoapi.createCourse(formData)
       }
 
       navigate('/tpo/courses', { replace: true })

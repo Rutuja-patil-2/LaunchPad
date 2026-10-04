@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import * as Icons from 'lucide-react'
-import { tpoApi } from '../../services/tpoApi'
+import { tpoapi } from '../../services/tpoapi'
 
 const TPOCourses = () => {
   const navigate = useNavigate()
@@ -15,7 +15,7 @@ const TPOCourses = () => {
 
   const fetchCourses = async () => {
     try {
-      const res = await tpoApi.getCourses()
+      const res = await tpoapi.getCourses()
 
       setCourses(
         res.data.results ||
@@ -34,7 +34,7 @@ const TPOCourses = () => {
       return
 
     try {
-      await tpoApi.deleteCourse(id)
+      await tpoapi.deleteCourse(id)
 
       setCourses(
         courses.filter(

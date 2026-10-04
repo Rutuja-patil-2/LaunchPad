@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import * as Icons from 'lucide-react'
-import { tpoApi } from '../../services/tpoApi'
+import { tpoapi } from '../../services/tpoapi'
 
 const TPODrives = () => {
   const navigate = useNavigate()
@@ -16,7 +16,7 @@ const TPODrives = () => {
 
   const fetchDrives = async () => {
     try {
-      const res = await tpoApi.getDrives()
+      const res = await tpoapi.getDrives()
       setDrives(res.data.results || res.data || [])
     } catch (err) {
       console.log(err)
@@ -29,7 +29,7 @@ const TPODrives = () => {
     if (!window.confirm('Delete this drive?')) return
 
     try {
-      await tpoApi.deleteDrive(id)
+      await tpoapi.deleteDrive(id)
 
       setDrives(
         drives.filter((drive) => drive.id !== id)

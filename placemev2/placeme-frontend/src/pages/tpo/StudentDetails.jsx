@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import * as Icons from 'lucide-react'
-import { tpoApi } from '../../services/tpoApi'
+import { tpoapi } from '../../services/tpoapi'
 
 const StudentDetails = () => {
   const { id } = useParams()
@@ -18,7 +18,7 @@ const StudentDetails = () => {
     setLoading(true)
     setError('')
     try {
-      const res = await tpoApi.getStudentDetails(id)
+      const res = await tpoapi.getStudentDetails(id)
       setData(res.data)
     } catch (err) {
       console.log(err)

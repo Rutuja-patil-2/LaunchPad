@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import * as Icons from 'lucide-react'
-import { tpoApi } from '../../services/tpoApi'
+import { tpoapi } from '../../services/tpoapi'
 
 export default function TPOMockTests() {
 
@@ -14,7 +14,7 @@ export default function TPOMockTests() {
   }, [])
 
   const fetchTests = async () => {
-    const res = await tpoApi.getMockTests()
+    const res = await tpoapi.getMockTests()
 
     setTests(
       res.data.results ||
@@ -28,7 +28,7 @@ export default function TPOMockTests() {
     if (!window.confirm('Delete test?'))
       return
 
-    await tpoApi.deleteMockTest(id)
+    await tpoapi.deleteMockTest(id)
 
     fetchTests()
   }

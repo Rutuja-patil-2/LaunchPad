@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { tpoApi } from '../../services/tpoApi'
+import { tpoapi } from '../../services/tpoapi'
 
 const DriveForm = () => {
   const navigate = useNavigate()
@@ -27,7 +27,7 @@ const DriveForm = () => {
 
   const loadCompanies = async () => {
     try {
-      const res = await tpoApi.getCompanies()
+      const res = await tpoapi.getCompanies()
       setCompanies(res.data.results || res.data || [])
     } catch (err) {
       console.log(err)
@@ -47,7 +47,7 @@ const DriveForm = () => {
     e.preventDefault()
 
     try {
-      await tpoApi.createDrive(formData)
+      await tpoapi.createDrive(formData)
 
       navigate('/tpo/drives')
     } catch (err) {

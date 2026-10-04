@@ -6,7 +6,7 @@ import * as Icons from 'lucide-react'
 import { StatCard } from '../../components/StatCard'
 import { DashboardCard } from '../../components/DashboardCard'
 import { Button } from '../../components/Button'
-import { tpoApi } from '../../services/tpoapi'
+import { tpoapi } from '../../services/tpoapi'
 
 const TPODashboard = () => {
   const navigate = useNavigate()
@@ -32,9 +32,9 @@ const TPODashboard = () => {
     try {
       const [companiesRes, drivesRes, applicationsRes] =
         await Promise.all([
-          tpoApi.getCompanies(),
-          tpoApi.getDrives(),
-          tpoApi.getApplications(),
+          tpoapi.getCompanies(),
+          tpoapi.getDrives(),
+          tpoapi.getApplications(),
         ])
 
       const companies =companiesRes.data.results?.length ||companiesRes.data.length ||0

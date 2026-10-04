@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { tpoApi } from '../../services/tpoApi'
+import { tpoapi } from '../../services/tpoapi'
 import * as Icons from 'lucide-react'
 
 const EditMockTest = () => {
@@ -27,7 +27,7 @@ const EditMockTest = () => {
 
 	const fetchTest = async () => {
 		try {
-			const res = await tpoApi.getMockTest(id)
+			const res = await tpoapi.getMockTest(id)
 			setFormData(res.data)
 		} catch (err) {
 			console.log('Failed to load mock test', err)
@@ -50,7 +50,7 @@ const EditMockTest = () => {
 		setLoading(true)
 
 		try {
-			await tpoApi.updateMockTest(id, formData)
+			await tpoapi.updateMockTest(id, formData)
 			navigate('/tpo/mock-tests')
 		} catch (err) {
 			console.log(err)

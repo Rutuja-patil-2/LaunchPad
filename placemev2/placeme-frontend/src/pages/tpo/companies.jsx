@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import * as Icons from 'lucide-react'
-import { tpoApi } from '../../services/tpoApi'
+import { tpoapi } from '../../services/tpoapi'
 import { useNavigate } from 'react-router-dom'
 
 const TPOCompanies = () => {
@@ -13,7 +13,7 @@ const TPOCompanies = () => {
 
   const fetchCompanies = async () => {
     try {
-      const res = await tpoApi.getCompanies()
+      const res = await tpoapi.getCompanies()
       setCompanies(res.data.results || res.data || [])
     } catch (err) {
       console.log(err)
@@ -32,7 +32,7 @@ const TPOCompanies = () => {
 
     try {
 
-      await tpoApi.deleteCompany(id)
+      await tpoapi.deleteCompany(id)
 
       fetchCompanies()
 

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import * as Icons from 'lucide-react'
-import { tpoApi } from '../../services/tpoApi'
+import { tpoapi } from '../../services/tpoapi'
 
 const CourseDetails = () => {
   const { id } = useParams()
@@ -16,7 +16,7 @@ const CourseDetails = () => {
 
   const fetchDetails = async () => {
     try {
-      const res = await tpoApi.getCourseDetails(id)
+      const res = await tpoapi.getCourseDetails(id)
       setData(res.data)
     } catch (err) {
       console.log(err)
@@ -41,7 +41,7 @@ const CourseDetails = () => {
     setSavingId(student.enrollment_id)
 
     try {
-      await tpoApi.updateEnrollmentProgress(
+      await tpoapi.updateEnrollmentProgress(
         student.enrollment_id,
         normalizedProgress
       )

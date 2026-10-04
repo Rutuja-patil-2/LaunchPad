@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import * as Icons from 'lucide-react'
-import { tpoApi } from '../../services/tpoApi'
+import { tpoapi } from '../../services/tpoapi'
 import { useNavigate } from 'react-router-dom'
 
 const TPOApplications = () => {
@@ -14,7 +14,7 @@ const TPOApplications = () => {
 
   const fetchApplications = async () => {
   try {
-    const res = await tpoApi.getApplications()
+    const res = await tpoapi.getApplications()
 
     console.log("APPLICATION RESPONSE FULL:")
 console.log(JSON.stringify(res.data, null, 2))
@@ -39,7 +39,7 @@ console.log(JSON.stringify(res.data, null, 2))
 
   const updateStatus = async (id, status) => {
     try {
-      await tpoApi.updateApplicationStatus(id, status)
+      await tpoapi.updateApplicationStatus(id, status)
 
       setApplications((prev) =>
         prev.map((app) =>

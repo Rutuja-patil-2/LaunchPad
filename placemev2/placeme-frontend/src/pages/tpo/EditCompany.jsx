@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { tpoApi } from '../../services/tpoapi'
+import { tpoapi } from '../../services/tpoapi'
 
 const EditCompany = () => {
 
@@ -26,7 +26,7 @@ const EditCompany = () => {
     try {
 
       const res =
-        await tpoApi.getCompany(id)
+        await tpoapi.getCompany(id)
 
       setFormData(res.data)
 
@@ -50,7 +50,7 @@ const EditCompany = () => {
 
     try {
 
-      await tpoApi.updateCompany(
+      await tpoapi.updateCompany(
         id,
         {
           description: formData.description,

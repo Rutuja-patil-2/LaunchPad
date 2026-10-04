@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { tpoApi } from '../../services/tpoApi'
+import { tpoapi } from '../../services/tpoapi'
 
 const TpoEnrollments = () => {
 	const [enrollments, setEnrollments] = useState([])
@@ -11,7 +11,7 @@ const TpoEnrollments = () => {
 
 	const fetchEnrollments = async () => {
 		try {
-			const res = await tpoApi.getEnrollments()
+			const res = await tpoapi.getEnrollments()
 			setEnrollments(res.data.results || res.data || [])
 		} catch (err) {
 			console.log(err)
